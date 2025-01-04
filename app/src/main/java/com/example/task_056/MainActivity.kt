@@ -73,7 +73,7 @@ import androidx.compose.ui.unit.sp
 //}
 
 
-//1.3 Дефолтный модификатор
+//1.3 Кастомный модификатор
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
