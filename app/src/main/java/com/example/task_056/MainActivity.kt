@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -109,19 +110,42 @@ import androidx.compose.ui.unit.sp
 //    }
 //}
 
+////2.1
+//class MainActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContent {
+//            val defaultModifier = Modifier.fillMaxWidth().padding(10.dp)
+//            Message("Привет", defaultModifier)
+//        }
+//    }
+//}
+//
+//@Composable
+//fun Message(text:String, defaultModifier: Modifier){
+//    Text(text, defaultModifier, fontSize = 18.sp, textAlign = TextAlign.Center)
+//}
 
-//2.1
+
+//2.2
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val defaultModifier = Modifier.fillMaxWidth().padding(10.dp)
-            Message("Привет", defaultModifier)
+            Message("Привет")
         }
     }
 }
 
 @Composable
-fun Message(text:String, defaultModifier: Modifier){
-    Text(text, defaultModifier, fontSize = 18.sp, textAlign = TextAlign.Center)
+fun Message(text:String){
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(shape = RoundedCornerShape(200.dp))
+            .border(width = 2.dp, color = Color.Green, shape = RoundedCornerShape(200.dp))
+            .background(Color(0x03,0xE0,0xFC,0xFF))
+            .padding(200.dp)
+    )
+    Text(text, modifier = Modifier.fillMaxWidth().padding(175.dp), fontSize = 18.sp, textAlign = TextAlign.Center)
 }
