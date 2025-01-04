@@ -8,6 +8,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -73,37 +74,54 @@ import androidx.compose.ui.unit.sp
 //}
 
 
-//1.3 Кастомный модификатор
+////1.3 Кастомный модификатор
+//class MainActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContent {
+//            Message("Привет")
+//        }
+//    }
+//}
+
+//@Composable
+//fun Message(text:String){
+//
+//    Column(
+//        modifier = Modifier.fillMaxSize(),
+//        horizontalAlignment = Alignment.CenterHorizontally,
+//        verticalArrangement = Arrangement.Bottom
+//    ) {
+//        Text(
+//            text = text,
+//            textAlign = TextAlign.Center,
+//            modifier = Modifier
+//                .padding(16.dp)
+//                .border(width = 2.dp, color = Color.Red)
+//                .padding(16.dp)
+//                .clip(shape = RectangleShape)
+//                .border(width = 2.dp, color = Color.Red)
+//                .background(Color.Yellow)
+//                .width(100.dp)
+//                .padding(0.dp, 0.dp, 0.dp, 4.dp),
+//            fontSize = 18.sp,
+//        )
+//    }
+//}
+
+
+//2.1
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Message("Привет")
+            val defaultModifier = Modifier.fillMaxWidth().padding(10.dp)
+            Message("Привет", defaultModifier)
         }
     }
 }
 
 @Composable
-fun Message(text:String){
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Bottom
-    ) {
-        Text(
-            text = text,
-            textAlign = TextAlign.Center,
-            modifier = Modifier
-                .padding(16.dp)
-                .border(width = 2.dp, color = Color.Red)
-                .padding(16.dp)
-                .clip(shape = RectangleShape)
-                .border(width = 2.dp, color = Color.Red)
-                .background(Color.Yellow)
-                .width(100.dp)
-                .padding(0.dp, 0.dp, 0.dp, 4.dp),
-            fontSize = 18.sp,
-        )
-    }
+fun Message(text:String, defaultModifier: Modifier){
+    Text(text, defaultModifier, fontSize = 18.sp, textAlign = TextAlign.Center)
 }
