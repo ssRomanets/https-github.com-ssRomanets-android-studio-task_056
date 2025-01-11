@@ -145,7 +145,7 @@ fun Message(text:String){
             .clip(shape = RoundedCornerShape(200.dp))
             .border(width = 2.dp, color = Color.Green, shape = RoundedCornerShape(200.dp))
             .background(Color(0x03,0xE0,0xFC,0xFF))
-            .padding(200.dp)
+            .padding(170.dp)
     )
-    Text(text, modifier = Modifier.fillMaxWidth().padding(175.dp), fontSize = 18.sp, textAlign = TextAlign.Center)
+    Text(text, modifier = Modifier.fillMaxWidth().padding(145.dp), fontSize = 18.sp, textAlign = TextAlign.Center)
 }
